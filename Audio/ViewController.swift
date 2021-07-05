@@ -29,6 +29,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     let MAX_VOLUME: Float = 10.0
     var progressTimer: Timer!
     
+    let timePlayerSelector: Selector = #selector(ViewController.updatePlayTime)
     
     
     override func viewDidLoad() {
@@ -68,6 +69,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
         
     }
+    
+    @objc func updatePlayTime() {
+        lblCurrentTime.text = convertNSTimeInterval2String(audioPlayer.currentTime)
+        pvProgressPlay.progress = Float(audioPlayer.currentTime/audioPlayer.duration)
+    }
+    
+    
+    
     // TimeInterval 값을 받아 문자열로 전환해 주는 함수
     func convertNSTimeInterval2String(_ time: TimeInterval) -> String {
         let min = Int(time/60) // 재생시간 매개변수인 time값을 60으로 나눈 '몫'
@@ -87,12 +96,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBAction func btnPlayAudio(_ sender: UIButton) {
         audioPlayer.play()
         setPlayButtons(false, pause: true, stop: true)
+        progressTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: timePlayerSelector, userInfo: nil, repeats: true)
         
     }
     
     @IBAction func btnPauseAudio(_ sender: UIButton) {
         audioPlayer.pause()
         setPlayButtons(true, pause: false, stop: false)
+        
     }
     
     
@@ -100,10 +111,21 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBAction func btnStopAudio(_ sender: UIButton) {
         audioPlayer.stop()
         setPlayButtons(true, pause: false, stop: false)
+        audioPlayer.currentTime = 0
+        lblCurrentTime.text = convertNSTimeInterval2String(0)
+        progressTimer.invalidate() // 타이머 무효화
     }
     
     
     @IBAction func slChangeVolume(_ sender: UISlider) {
+        audioPlayer.volume = slVolume.value
+    }
+    
+    
+    // 오디오 재생이 끝나면 맨 처음 상태로 되돌리는 함수
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        progressTimer.invalidate()
+        setPlayButtons(true, pause: false, stop: false)
     }
 }
 
