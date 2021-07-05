@@ -58,6 +58,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         lblCurrentTime.text = convertNSTimeInterval2String(0)
         
         
+        // setPlayButtons로 대체
+        // 버튼 제어
+//        btnPlay.isEnabled = true // 초기화 후 플레이버튼 활성화
+//        btnPause.isEnabled = false // 재생 전이니 비활성화
+//        btnStop.isEnabled = false // 재생 전 비활성화
+        setPlayButtons(true, pause: false, stop: false)
+        
         
         
     }
@@ -69,16 +76,30 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         return strTime
     }
     
+    // 버튼 제어 함수
+    func setPlayButtons(_ play: Bool, pause: Bool, stop: Bool) {
+        btnPlay.isEnabled = play
+        btnPause.isEnabled = pause
+        btnStop.isEnabled = stop
+    }
+    
 
     @IBAction func btnPlayAudio(_ sender: UIButton) {
+        audioPlayer.play()
+        setPlayButtons(false, pause: true, stop: true)
+        
     }
     
     @IBAction func btnPauseAudio(_ sender: UIButton) {
+        audioPlayer.pause()
+        setPlayButtons(true, pause: false, stop: false)
     }
     
     
     
     @IBAction func btnStopAudio(_ sender: UIButton) {
+        audioPlayer.stop()
+        setPlayButtons(true, pause: false, stop: false)
     }
     
     
