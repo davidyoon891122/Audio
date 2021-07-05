@@ -102,12 +102,48 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bZi-h2-Sxo">
+                                <rect key="frame" x="126.33333333333333" y="371" width="137.33333333333337" height="66"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="QMp-T0-oqJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="137.33333333333334" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPG-5D-KbC">
+                                                <rect key="frame" x="0.0" y="0.0" width="54.333333333333336" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sJZ-j6-fBK">
+                                                <rect key="frame" x="88.333333333333329" y="0.0" width="50.999999999999986" height="31"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="I0N-QW-fiG">
+                                        <rect key="frame" x="0.0" y="36" width="137.33333333333334" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bX4-6f-W53">
+                                                <rect key="frame" x="0.0" y="0.0" width="70.333333333333329" height="30"/>
+                                                <state key="normal" title="Record"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9B-sO-Hfu">
+                                                <rect key="frame" x="91.333333333333329" y="0.0" width="45.999999999999986" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="bZi-h2-Sxo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h8h-tn-VXP"/>
                             <constraint firstItem="m9V-7z-yag" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lKS-lx-1qT"/>
                             <constraint firstItem="m9V-7z-yag" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="oAr-Wo-oO0"/>
+                            <constraint firstItem="bZi-h2-Sxo" firstAttribute="top" secondItem="m9V-7z-yag" secondAttribute="bottom" constant="34" id="rsZ-Jd-a2Z"/>
                         </constraints>
                     </view>
                     <connections>
