@@ -13,6 +13,7 @@
 		AD4FE2D12693213D00EFCAF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4FE2CF2693213D00EFCAF3 /* Main.storyboard */; };
 		AD4FE2D32693213D00EFCAF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD4FE2D22693213D00EFCAF3 /* Assets.xcassets */; };
 		AD4FE2D62693213D00EFCAF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4FE2D42693213D00EFCAF3 /* LaunchScreen.storyboard */; };
+		AD4FE2DE269327DF00EFCAF3 /* Sicilian_Breeze.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AD4FE2DD269327DF00EFCAF3 /* Sicilian_Breeze.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AD4FE2D22693213D00EFCAF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD4FE2D52693213D00EFCAF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD4FE2D72693213D00EFCAF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD4FE2DD269327DF00EFCAF3 /* Sicilian_Breeze.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sicilian_Breeze.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		AD4FE2C82693213D00EFCAF3 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				AD4FE2DD269327DF00EFCAF3 /* Sicilian_Breeze.mp3 */,
 				AD4FE2C92693213D00EFCAF3 /* AppDelegate.swift */,
 				AD4FE2CB2693213D00EFCAF3 /* SceneDelegate.swift */,
 				AD4FE2CD2693213D00EFCAF3 /* ViewController.swift */,
@@ -125,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD4FE2D62693213D00EFCAF3 /* LaunchScreen.storyboard in Resources */,
+				AD4FE2DE269327DF00EFCAF3 /* Sicilian_Breeze.mp3 in Resources */,
 				AD4FE2D32693213D00EFCAF3 /* Assets.xcassets in Resources */,
 				AD4FE2D12693213D00EFCAF3 /* Main.storyboard in Resources */,
 			);
