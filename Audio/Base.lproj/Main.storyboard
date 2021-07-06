@@ -114,7 +114,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sJZ-j6-fBK">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sJZ-j6-fBK">
                                                 <rect key="frame" x="88.333333333333329" y="0.0" width="50.999999999999986" height="31"/>
                                                 <connections>
                                                     <action selector="swRecordMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="aof-MH-j0j"/>

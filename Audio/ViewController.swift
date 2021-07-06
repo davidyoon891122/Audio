@@ -30,6 +30,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     var progressTimer: Timer!
     
     let timePlayerSelector: Selector = #selector(ViewController.updatePlayTime)
+    let timeRecordSelector: Selector = #selector(ViewController.updateRecordTime)
     
     // for record
     var audioRecorder: AVAudioRecorder!
@@ -133,10 +134,15 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         
         
     }
-    
+    // update play time
     @objc func updatePlayTime() {
         lblCurrentTime.text = convertNSTimeInterval2String(audioPlayer.currentTime)
         pvProgressPlay.progress = Float(audioPlayer.currentTime/audioPlayer.duration)
+    }
+    
+    // update record time
+    @objc func updateRecordTime() {
+        lblRecordTime.text = convertNSTimeInterval2String(audioRecorder.currentTime)
     }
     
     
@@ -220,8 +226,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         if (sender as AnyObject).titleLabel?.text == "Record" {
             audioRecorder.record()
             (sender as AnyObject).setTitle("Stop", for: UIControl.State())
+            progressTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: timeRecordSelector, userInfo: nil, repeats: true)
         } else {
             audioRecorder.stop()
+            progressTimer.invalidate()
             (sender as AnyObject).setTitle("Record", for: UIControl.State())
             btnPlay.isEnabled = true
             initPlay()
