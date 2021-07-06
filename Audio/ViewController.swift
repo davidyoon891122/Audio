@@ -48,11 +48,11 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         selectAudioFile()
-        if !isRecordMode {
+        if !isRecordMode { // 녹음 모드가 아닐 때
             initPlay()
             btnRecod.isEnabled = false
             lblRecordTime.isEnabled = false
-        } else {
+        } else { // 녹음 모드일 때
             initRecord()
         }
     }
@@ -206,7 +206,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     }
     
     
-    
+    // 스위치뷰 온 오프에 따라 초기 값들 변경
     @IBAction func swRecordMode(_ sender: UISwitch) {
         if sender.isOn {
             audioPlayer.stop()
@@ -221,8 +221,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             lblRecordTime.isEnabled = false
             lblRecordTime.text = convertNSTimeInterval2String(0)
         }
-        selectAudioFile()
-        if !isRecordMode {
+        selectAudioFile() // 모드에 따라 오디오 파일을 선택
+        if !isRecordMode { //재생 모드일 떄
             initPlay()
         } else {
             initRecord()
